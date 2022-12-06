@@ -1,11 +1,11 @@
 #!/bin/bash
 # author: eleAche
 # descripcion: utilidad para consultar trucos de forma accesible.
-mensaje_ayuda() {
-  local trucos=$(curl cheat.sh/:list | wc -l)
+    mensaje_ayuda() {
+  local keywords=12662
 cat << EOF
 Utilidad para consultar trucos desde la terminal.
-Hay un total de $trucos listas de trucos disponibles.
+Hay un total de $keywords listas de trucos disponibles.
   uso: $0 [keyword]
   ejemplos:
     $0 qemu
@@ -20,7 +20,7 @@ query() {
   curl "https://cheat.sh/${entry}"
 }
 
-if (( $# -eq 0 ))
+if (( $# == 0 ))
   then
     mensaje_ayuda
     exit
