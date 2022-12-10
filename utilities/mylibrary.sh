@@ -32,7 +32,7 @@ cat << 'EOF' > $script
 trans -b :es -input "$1" -output "${1%.txt}-es.txt"
 EOF
 
-parallel bash %script ::: ls *.txt
+parallel bash $script ::: ls *.txt
 exit
 
 
